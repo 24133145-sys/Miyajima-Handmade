@@ -1,0 +1,588 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   全体レイアウト・基本設定
+   ========================================================================== */
+body {
+    background-image: linear-gradient(rgba(253, 251, 247, 0.88), rgba(253, 251, 247, 0.88)), url("../image/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #383131; 
+    font-family: "Zen Maru Gothic", "メイリオ", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+body.subpage {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efe6 100%);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.sub-container {
+    max-width: 850px;
+}
+
+.page {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+/* ==========================================================================
+   ヘッダー・ナビゲーション
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.logo-wrapper {
+    display: inline-block;
+}
+
+.Logo {
+    width: 160px;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.global-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.global-nav li {
+    font-weight: 700;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.global-nav a {
+    color: #504443;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 6px 0;
+}
+
+.global-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #c85546; 
+    transition: width 0.3s ease;
+}
+
+.global-nav a.active::after {
+    width: 100%;
+}
+
+.global-nav a:hover {
+    color: #c85546;
+}
+.global-nav a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   パンくずリスト・先頭へ戻るボタン
+   ========================================================================== */
+.breadcrumb-wrapper {
+    background-color: rgba(245, 239, 230, 0.4); 
+    padding: 8px 0;
+    border-bottom: 1px solid #e2d1c3;
+}
+
+.breadcrumb-wrapper .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.breadcrumb {
+    margin: 0;
+    font-size: 13px;
+    color: #706361;
+    text-align: left;
+}
+
+.sentou {
+    clear: both;
+    text-align: right !important;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   見出し・一般テキスト
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin-top: 0;
+}
+
+.main-title-box {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 26px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #c85546; 
+    padding: 18px 30px;
+    border-radius: 50px; 
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(200, 85, 70, 0.3);
+    line-height: 1.4;
+}
+
+h2 span {
+    font-size: 15px;
+    font-weight: normal;
+    display: block;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.page-title {
+    display: block;
+    margin: 20px auto 40px;
+    max-width: 380px; 
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #b05b2e; 
+    padding-bottom: 12px;
+    border-bottom: 2px dashed #e2d1c3;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+strong {
+    color: #c85546;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   コンポーネント（カード、テーブル、フォームなど）
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.catch {
+    position: absolute;
+    top: 50px;       
+    left: 50px;      
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 2px solid #d4a373; 
+    padding: 35px 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: left; 
+    width: 80%;
+    max-width: 460px;
+    box-sizing: border-box;
+}
+
+.catch .subhead {
+    color: #c85546;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.catch-text, .catch-highlight {
+    font-size: 16px;
+    color: #4a403f;
+    text-align: left; 
+}
+
+.catch-highlight {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(226, 209, 195, 0.5);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.update-tag {
+    text-align: center;
+    font-size: 14px;
+    color: #706361;
+    margin-top: 15px;
+}
+
+.update-tag span {
+    background-color: #d4a373;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.shadowbox {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 25px 30px;
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-left: 5px solid #c85546;
+}
+
+.shadowbox p { margin-bottom: 8px; }
+.shadowbox p:last-child { margin-bottom: 0; }
+
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+}
+
+.handlist {
+    list-style-image: url("../image/icon.png");
+    padding-left: 20px;
+    margin: 0;
+}
+
+.handlist li {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #4a403f;
+}
+
+.flex-img {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.img-card {
+    min-width: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    padding: 8px; 
+}
+
+.img-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.point-img {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.intro-footer-text {
+    color: #706361;
+    margin-top: 40px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px 0;
+    font-size: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table caption {
+    caption-side: top;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    color: #c85546;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.styled-table th {
+    background-color: #d4a373;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.styled-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0e6dc;
+    color: #4a403f;
+}
+
+.contact-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #4a403f;
+    font-size: 15px;
+    text-align: left;
+}
+
+.required {
+    background: #c85546;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcd1c4;
+    border-radius: 6px;
+    background-color: #faf8f5;
+    box-sizing: border-box;
+}
+
+.form-btn-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background-color: #c85546;
+    color: #ffffff;
+    border: none;
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #383131; 
+    color: #f5efe6;
+    padding: 25px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   HTML内の直書きスタイルを吸収したクラス群
+   ========================================================================== */
+.content-section {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.content-section.clear { clear: both; }
+.artist-block {
+    display: flow-root;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+h3.text-left {
+    text-align: left;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+p.text-left { text-align: left; }
+.artist-content { margin-top: 15px; }
+.bold-text { font-weight: bold; }
+
+/* ==========================================================================
+   仕様2：ページ内目次のデザイン
+   ========================================================================== */
+.page-toc {
+    background-color: #ffffff;
+    border: 1px solid #e2d1c3;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.toc-title {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    color: #b05b2e;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.page-toc ul {
+    list-style-type: square;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.page-toc li { margin-bottom: 8px; }
+
+/* ==========================================================================
+   仕様4：共通リンク疑似クラスの設定（下線・カラーの制御）
+   ========================================================================== */
+a:link {
+    color: #c85a17;
+    text-decoration: none; /* 初期状態は下線なし */
+}
+a:visited {
+    color: #9c4610;        /* 訪問済み */
+}
+a:hover {
+    color: #ff7f27;
+    text-decoration: underline; /* ホバーで下線出現 */
+}
+a:active {
+    color: #e03d00;        /* クリックした瞬間 */
+}
+
+/* ==========================================================================
+   レスポンシブ対応（スマホ表示）
+   ========================================================================== */
+@media (max-width: 600px) {
+    .point-img {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .img-card.point-img {
+        max-width: 100%;
+        display: block;
+    }
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .global-nav ul { gap: 15px; }
+    .hero-section { height: 350px; }
+    .catch {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 25px 20px;
+        width: 90%;
+        text-align: center; 
+    }
+    .catch-text, .catch-highlight, .catch .subhead { text-align: center; }
+    .flex-img { flex-direction: column; align-items: center; }
+    .img-card { width: 100%; max-width: 350px; }
+    .styled-table th, .styled-table td { padding: 10px; font-size: 14px; }
+} /* ← ここで確実にスマホ用メディアクエリを閉じる */
+
+/* ==========================================================================
+   仕様8：印刷用スタイル（一本化）
+   ========================================================================== */
+@media print {
+    .site-header, 
+    .global-nav, 
+    .breadcrumb-wrapper, 
+    .sentou, 
+    .page-toc, 
+    footer {
+        display: none !important;
+    }
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-family: serif; 
+        font-size: 12pt;
+    }
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+} /* ← ここで印刷用メディアクエリを閉じて終了（末尾に余計な } をつけない） */
+
+
